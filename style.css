@@ -1,0 +1,256 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #8fe0ff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* żeby footer był na dole */
+.strona{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+h1{
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+header{
+    text-align: center;
+    color: white;
+    background-color: #31255a;
+    align-content: center;
+    width: 100%;
+    margin-top: 0;
+    font-size: 4vw;
+}
+
+.naglowek_miasta{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    font-size: 0.8em;
+}
+
+#wyszukiwanie_miasta{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 20px;
+    height: 3vh;
+    min-width: 0;
+}
+
+#wyszukiwanie_miasta > button{
+    max-width: 160px;
+    font-size: 2em;
+    height: 50px;
+}
+
+.miejscowosci{
+    display: flex;
+    flex-direction: column;
+}
+
+.miasto{
+    display: flex;
+    background-color: whitesmoke;
+    border: thin blue solid;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 2em;
+}
+
+footer{
+    font-size: 3vh;
+    background-color:#31255a;
+    color: wheat;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+
+.miasto_zawartosc{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.element_pogody > h2{
+    display: flex;
+    grid-area: tytul;
+    font-size: 2.5em;
+    justify-content: center;
+    align-items: center;
+}
+.element_pogody > p{
+    display: flex;
+    grid-area: wartosc;
+    font-size: 2em;
+    justify-content: center;
+    align-items: center;
+}
+.element_pogody > img{
+    display: flex;
+    grid-area: obraz;
+    height: 165px;
+    justify-content: center;
+    align-items: center;
+}
+
+.element_pogody{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+        "tytul tytul"
+        "wartosc obraz";
+    overflow-wrap: break-word;
+    min-width: 0;
+    background-color: whitesmoke;
+    border: thin blue solid;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.dodatkowy {
+    display: inline-flex;
+    background-color: whitesmoke;
+    border: thin blue solid;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: min-content;
+    justify-self: right;
+}
+
+.dodatkowy > p{
+    display: none;
+}
+
+.dodatkowy > img{
+    display: flex;
+    height: 30px;
+}
+
+.powrot{
+    display: inline-flex;
+    background-color: whitesmoke;
+    border: thin blue solid;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: min-content;
+}
+
+.powrot > p{
+    display: none;
+}
+
+.powrot > img{
+    display: flex;
+    height: 30px;
+}
+
+@media screen and (min-width: 800px) {
+    header{
+        font-size: 2vh;
+    }
+    .naglowek_miasta{
+        font-size: 2vh;
+    }
+    #wyszukiwanie_miasta{
+        height: auto;
+    }
+    #wyszukiwanie_miasta > button{
+        font-size: 1.5em;
+    }
+    .miejscowosci{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        min-width: 0%;
+        justify-content: space-evenly;
+    }
+    .miasto{
+        height: 150px;
+        font-size: 1.8vh;
+    }
+    .dodatkowy{
+        width: auto;
+        max-width: fit-content;
+    }
+    .dodatkowy > p{
+        display: flex;
+    }
+    .dodatkowy > img{
+        display: none;
+    }
+    .powrot{
+        width: auto;
+        max-width: fit-content;
+    }
+    .powrot > p{
+        display: flex;
+    }
+    .powrot > img{
+        display: none;
+    }
+    .miasto_zawartosc{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        min-width: 0%;
+        justify-content: space-evenly;
+    }
+    footer{
+        font-size: 2vh;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .miejscowosci{
+    grid-template-columns: repeat(3, 1fr);
+    }
+    .element_pogody{
+        height: 20vw;
+    }
+    .element_pogody > h2{
+        font-size: 3vw;
+    }
+    .element_pogody > p{
+        font-size: 2.8vw;
+    }
+    .element_pogody > img{
+        height: 10vw;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .miejscowosci{
+    grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .miejscowosci{
+    grid-template-columns: repeat(5, 1fr);
+    }
+}
